@@ -17,10 +17,10 @@ object BuildSettings {
 
   // Basic settings for our app
   lazy val basicSettings = Seq[Setting[_]](
-    organization  := "Concurrent Inc.",
-    version       := "0.11.2", // -> follow the release numbers of scalding
-    description   := "The scalding tutorial as an SBT project",
-    scalaVersion  := "2.10.0", 
+    organization  := "com.digilant",
+    version       := "0.0.1", // -> follow the release numbers of scalding
+    description   := "The scalding example as an SBT project",
+    scalaVersion  := "2.10.4",
     scalacOptions := Seq("-deprecation", "-encoding", "utf8"),
     resolvers     ++= Dependencies.resolutionRepos
   )
@@ -31,7 +31,7 @@ object BuildSettings {
   lazy val sbtAssemblySettings = assemblySettings ++ Seq(
 
     // Slightly cleaner jar name
-    jarName in assembly <<= (name, version) { (name, version) => name + "-" + version + ".jar" },
+    jarName in assembly := { name + "-" + version + ".jar" },
     
     // Drop these jars
     excludedJars in assembly <<= (fullClasspath in assembly) map { cp =>
