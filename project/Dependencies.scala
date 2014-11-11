@@ -20,7 +20,7 @@ object Dependencies {
 
   object V {
     val scalding  = "0.11.2"
-    val hadoop    = "2.4.1"
+    val hadoop    = "2.4.0" // EMR supports 2.4.0
     val specs2    = "1.13" // -> "1.13" when we bump to Scala 2.10.0
     // Add versions for your additional libraries here...
     val cascading = "2.6.0"
